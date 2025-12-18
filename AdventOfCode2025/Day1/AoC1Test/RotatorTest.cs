@@ -14,7 +14,7 @@ public class RotatorTest
     public void Test1(List<Direction> directions, int password)
     {
         Rotator rotator = new Rotator(directions);
-        Assert.Equals(rotator.GetPassword(), password);
+        Assert.That(rotator.GetPassword().Equals(password));
     }
 
     private static IEnumerable<TestCaseData> DirectionTestCases()
