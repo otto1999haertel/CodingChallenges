@@ -1,6 +1,0 @@
-﻿namespace AoC3;
-
-public class Class1
-{
-
-}
