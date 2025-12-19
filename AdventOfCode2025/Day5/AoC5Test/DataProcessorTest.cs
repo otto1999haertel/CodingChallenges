@@ -21,4 +21,12 @@ public class DataProcessorTest
         DataProcessor dataProcessor = new DataProcessor("DataBase.txt");
         Assert.That(dataProcessor.IsIngridientFresh(id).Equals(expected));
     }
+
+    [Test]
+    public void CountFreshIngridientsTest()
+    {
+        DataProcessor dataProcessor = new DataProcessor("DataBase.txt");
+        int expected = 3;
+        Assert.That(dataProcessor.CountFreshIngridients(), Is.EqualTo(expected));
+    }
 }

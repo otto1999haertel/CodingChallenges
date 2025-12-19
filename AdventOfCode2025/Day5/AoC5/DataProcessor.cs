@@ -6,6 +6,8 @@ public class DataProcessor
 {
     private readonly string _filePath;
     private readonly List<Range> ranges = new List<Range>();
+
+    private readonly List<int> ingridientIds = new List<int>();
     public DataProcessor(string FilePath)
     {
         if (File.Exists(FilePath))
@@ -17,13 +19,16 @@ public class DataProcessor
                 string line;
                 while ((line = streamReader.ReadLine()) != null)
                 {
-                    if(string.IsNullOrWhiteSpace(line))
+                    if (line.Contains("-"))
                     {
-                        break;
+                        string [] strings = line.Split('-');
+                        Range range = new Range(int.Parse(strings[0]), int.Parse(strings[1]));
+                        ranges.Add(range);
                     }
-                    string [] strings = line.Split('-');
-                    Range range = new Range(int.Parse(strings[0]), int.Parse(strings[1]));
-                    ranges.Add(range);
+                    else if (string.IsNullOrEmpty(line)==false)
+                    {
+                        ingridientIds.Add(int.Parse(line));
+                    }
                 }
             }
 
@@ -45,5 +50,18 @@ public class DataProcessor
             }
         }
         return false;
+    }
+
+    public int CountFreshIngridients()
+    {
+        int freshCount = 0;
+        foreach(int id in ingridientIds)
+        {
+            if(IsIngridientFresh(id))
+            {
+                freshCount++;
+            }
+        }
+        return freshCount;
     }
 }
