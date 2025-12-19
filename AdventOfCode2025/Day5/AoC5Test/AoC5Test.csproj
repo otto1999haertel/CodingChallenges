@@ -17,6 +17,16 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\AoC5\AoC5.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\AoC5\DataBase.txt" Link="DataBase.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
     <Using Include="NUnit.Framework" />
   </ItemGroup>
 
