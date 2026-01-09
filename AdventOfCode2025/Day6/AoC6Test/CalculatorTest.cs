@@ -13,9 +13,11 @@ public class CalculatorTest
     }
 
     [Test]
-    public void Test1()
+    [TestCase("Task.txt", 4277556)]
+    [TestCase("Task2.txt", 214016545)]
+    public void Test1(string taskFile, int expected)
     {
-        int result = _calculator.Calculate("Task.txt");
-        Assert.That(result.Equals(4277556));
+        int result = _calculator.Calculate(taskFile);
+        Assert.That(result.Equals(expected));
     }
 }
