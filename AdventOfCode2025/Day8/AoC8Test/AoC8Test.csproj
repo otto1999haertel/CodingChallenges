@@ -24,4 +24,11 @@
     <Using Include="NUnit.Framework" />
   </ItemGroup>
 
+  
+  <ItemGroup>
+    <None Include="Task.txt" Link="Task.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

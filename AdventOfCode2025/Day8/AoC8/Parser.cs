@@ -13,9 +13,9 @@ internal class Parser
         }
         filePath = FilePath;
     }
-    public List<Point> ParseInput()
+    public List<Point3D> ParseInput()
     {
-        List<Point> points = new List<Point>();
+        List<Point3D> points = new List<Point3D>();
         using (var fileStream = File.OpenRead(filePath))
         using (var streamReader = new StreamReader(fileStream, Encoding.UTF8, true, 128))
         {
@@ -32,7 +32,7 @@ internal class Parser
                     int.TryParse(strings[1], out int y) &&
                     int.TryParse(strings[2], out int z))
                 {
-                    points.Add(new Point(x, y, z));
+                    points.Add(new Point3D(x, y, z));
                 }
                 else
                 {

@@ -29,7 +29,8 @@ public class DistanceCalculator
 
         //Resul: Multiplication of distance of three biggest circuits
         int totalDistance = 0;
-
+        List<Point3D> points = new Parser(filePath).ParseInput();
+        List<(Point3D, Point3D,double)> calculatedList = PointDistanceCalculator.CreateSortedPairs(points);
         return totalDistance;
     } 
 }
