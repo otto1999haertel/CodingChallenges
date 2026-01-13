@@ -9,7 +9,6 @@ public class CalculatorSplitter
 
     public int CalculateSumOfSplits()
     {
-        // Placeholder implementation
         int splitCount = 0;
         for(int i = 1; i < input.GetLength(0); i++)
         {
@@ -21,7 +20,7 @@ public class CalculatorSplitter
                 }
                 if(i>0 && i<=input.GetLength(0) && j>0 && j<input[i].Count()-1)
                 {
-                    if(input[i][j].Equals('^'))
+                    if(input[i][j].Equals('^') && input[i - 1][j].Equals('|'))
                     {
                         splitCount++;
                         if (!input[i][j - 1].Equals('|'))

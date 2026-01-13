@@ -1,6 +1,4 @@
-﻿using System.ComponentModel;
-using System.Runtime.CompilerServices;
-using AoC7;
+﻿using AoC7;
 namespace AoC7Test;
 
 public class CalculatorSplitterTest
@@ -13,7 +11,7 @@ public class CalculatorSplitterTest
     }
 
     [Test]
-    public void Test1()
+    public void SplitterTest()
     {
         char[][] testData = new char[][]
         {
