@@ -1,3 +1,5 @@
+namespace AoC8;
+
 internal class Point
 {
     private int x;

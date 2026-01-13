@@ -1,4 +1,5 @@
 using System.Text;
+namespace AoC8;
 
 internal class Parser
 {

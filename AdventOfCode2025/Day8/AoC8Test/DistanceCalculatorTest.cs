@@ -1,4 +1,6 @@
-﻿namespace AoC8Test;
+﻿using AoC8;
+
+namespace AoC8Test;
 
 public class Tests
 {
@@ -11,6 +13,8 @@ public class Tests
     [TestCase("Task.txt", 4277556)]
     public void DistanceCalculateTest(string taskFile, int expected)
     {
+        DistanceCalculator distanceCalculator = new DistanceCalculator(taskFile);
+        distanceCalculator.CalculateDistances();
         Assert.Pass();
     }
 }
