@@ -8,7 +8,8 @@ public class Tests
     }
 
     [Test]
-    public void Test1()
+    [TestCase("Task.txt", 4277556)]
+    public void DistanceCalculateTest(string taskFile, int expected)
     {
         Assert.Pass();
     }
