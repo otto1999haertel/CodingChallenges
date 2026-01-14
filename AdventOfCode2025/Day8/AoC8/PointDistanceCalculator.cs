@@ -11,8 +11,12 @@ internal static class PointDistanceCalculator
         {
             for (int j = i + 1; j < points.Count; j++)
             {
-                double dist = CalculateEuclideDistance(points[i], points[j]);
-                pairs.Add((points[i], points[j], dist));
+                if(!points[i].Equals(points[j]))
+                {
+                    double dist = CalculateEuclideDistance(points[i], points[j]);
+                    pairs.Add((points[i], points[j], dist));
+                }
+
             }
         }
         
@@ -22,7 +26,7 @@ internal static class PointDistanceCalculator
         return pairs;
     }
 
-    private static double CalculateEuclideDistance(Point3D p1, Point3D p2)
+    internal static double CalculateEuclideDistance(Point3D p1, Point3D p2)
     {
         double dx = p2.X - p1.X;
         double dy = p2.Y - p1.Y;

@@ -16,5 +16,14 @@ internal class Point3D
         this.y = y;
         this.z = z;
     }
+
+    override public bool Equals(object? obj)
+    {
+        if (obj is Point3D other)
+        {
+            return this.x == other.x && this.y == other.y && this.z == other.z;
+        }
+        return false;
+    }
     
 }
