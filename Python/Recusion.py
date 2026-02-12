@@ -21,11 +21,11 @@ def __find_highest__(input):
     else:
         return recursion
 
+def __reverse_string__(input):
     
-    
-    print()
-
-
+    if(len(input)==0):
+        return ""
+    return __reverse_string__(input[1:]) + input[0]
 
 
 
@@ -35,3 +35,4 @@ if __name__ == "__main__":
     assert(__find_highest__([-1, 3, 5, 6, 99, 12, 2])==99)
     assert(__find_highest__([0, 12, 4, 87])==87)
     assert(__find_highest__([8])==8)
+    assert(__reverse_string__("hello")=="olleh")
