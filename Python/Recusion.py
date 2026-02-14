@@ -1,4 +1,4 @@
-def __find_highest__(input):
+def _find_highest_(input):
     global high
     highest =0
     if(len(input)==0):
@@ -13,7 +13,7 @@ def __find_highest__(input):
         highest = input[-2]
         input.pop(-1)
         input.pop(-1)
-    recursion = __find_highest__(input)
+    recursion = _find_highest_(input)
     if recursion is None:
         return highest
     if highest > recursion:
@@ -21,18 +21,18 @@ def __find_highest__(input):
     else:
         return recursion
 
-def __reverse_string__(input):
+def _reverse_string_(input):
     
     if(len(input)==0):
         return ""
-    return __reverse_string__(input[1:]) + input[0]
+    return _reverse_string_(input[1:]) + input[0]
 
 
 
 
 if __name__ == "__main__":
     print("Hello World")
-    assert(__find_highest__([-1, 3, 5, 6, 99, 12, 2])==99)
-    assert(__find_highest__([0, 12, 4, 87])==87)
-    assert(__find_highest__([8])==8)
-    assert(__reverse_string__("hello")=="olleh")
+    assert(_find_highest_([-1, 3, 5, 6, 99, 12, 2])==99)
+    assert(_find_highest_([0, 12, 4, 87])==87)
+    assert(_find_highest_([8])==8)
+    assert(_reverse_string_("hello")=="olleh")

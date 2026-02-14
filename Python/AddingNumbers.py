@@ -1,4 +1,4 @@
-def __addingNumbers(numA, numB):
+def _addingNumbers(numA, numB):
     if(len(numA)!=len(numB)):
         return "Invalid Operation"
     res=""
@@ -11,6 +11,6 @@ def __addingNumbers(numA, numB):
 
 if __name__ == "__main__":
     print("Hello World")
-    assert(__addingNumbers("111", "111")=="222")
-    assert(__addingNumbers("10", "80")=="90")
-    assert(__addingNumbers("", "20") == "Invalid Operation")
+    assert(_addingNumbers("111", "111")=="222")
+    assert(_addingNumbers("10", "80")=="90")
+    assert(_addingNumbers("", "20") == "Invalid Operation")
