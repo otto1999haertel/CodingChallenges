@@ -5,9 +5,13 @@ def _shift_right(input, shift_value):
         input=input*-1
         was_negative = True
     bin_num = "{0:b}".format(input)
-    if(shift_value<len(bin_num)):       
+    if(shift_value<=len(bin_num)):       
         cutted_string = bin_num[:-shift_value]
-        bin_converted = int(cutted_string,2)
+        bin_converted=""
+        if(len(cutted_string)==0):
+            bin_converted = 1
+        else:
+            bin_converted=int(cutted_string,2)
         if(was_negative):
             return bin_converted*-1
         return bin_converted
